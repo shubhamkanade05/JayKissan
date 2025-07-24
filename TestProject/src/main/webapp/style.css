@@ -1,0 +1,746 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    padding-top: 0px;
+}
+
+/* Styling Google Translate Element */
+#google_element {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    z-index: 2000; /* Ensures the Google Translate element stays on top */
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    position: fixed;
+    /* top: 0; */
+    z-index: 1000;
+    background-color: #8af6f8;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+#logoImg img {
+    height: 50px;
+    width: auto;
+}
+
+/* Navbar Links Styling */
+.navbar-nav .nav-item .nav-link {
+    margin-left: 30px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+#login-div{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+/* Hover effect for Navbar Links */
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    background-color: #8af6f8;
+    border: none;
+}
+
+
+
+.dropdown-item {
+    color: #333;
+    padding: 8px 15px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure translate added spans don't affect alignment */
+.navbar span, .navbar a {
+    all: unset;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+}
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbarNav ul li a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+        /* Smaller text on mobile */
+    }
+
+    .form-control {
+        width: 150px;
+        /* Smaller search bar */
+    }
+}
+
+
+/* farm body */
+.farm {
+    margin-top: 5px;
+    position: relative;
+    width: 100vw;
+    /* Full viewport width */
+    height: auto;
+}
+
+.farm img {
+    width: 100vw;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.7); /* Adds contrast for text readability */
+}
+
+.corner-images {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.corner-images img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.corner-images img:hover {
+    filter: grayscale(0%);
+    /* Remove grayscale on hover */
+}
+
+.farm-text {
+    position: absolute;
+    top: 40%;
+    /* Vertically center */
+    left: 50%;
+    /* Horizontally center */
+    transform: translate(-50%, -50%);
+    /* Align the text perfectly at center */
+    text-align: center;
+    background-image: url('photos/logo.png');
+    /* Background image for the text box */
+    background-size: contain;
+    /* Fit the logo inside the box */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevent the image from repeating */
+
+    width: 300px;
+    /* Set width for the text box */
+    height: 500px;
+    /* Set height for the text box */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* Move slogans to the bottom */
+    align-items: center;
+    /* Center-align slogans */
+    padding: 0px;
+    /* Padding for spacing around the slogan */
+
+}
+
+#slogans1 {
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Text shadow for better readability */
+}
+
+#slogans2 {
+    margin-top: 5px;
+    font-size: 1.6rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Text shadow for better readability */
+}
+
+
+
+
+
+
+
+/* Main body styling */
+.mainBody {
+    display: flex ;
+    flex-wrap: wrap;
+    /* Wrap cards to the next row if space runs out */
+    justify-content: space-between;
+    /* Evenly distribute space between cards */
+    margin: 20px;
+}
+
+/* Card styling */
+
+/* Each individual card */
+.card {
+    flex: 0 0 auto;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    width: 220px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Card hover effect with rotation */
+.card:hover {
+    transform: scale(1.07) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image styling with gradient overlay */
+.card img {
+    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover img {
+    opacity: 0.9;
+    filter: brightness(0.95);
+}
+
+/* Active card with high z-index */
+.active-card {
+    z-index: 10;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Title styling */
+.card-title {
+    font-family: "Cambria", Georgia, serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Button styling with gradient and glow */
+.btn-primary {
+    background: linear-gradient(135deg, #2d87ff, #5a99ff);
+    border: none;
+    color: white;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 10px rgba(45, 135, 255, 0.6);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        padding: 10px;
+    }
+
+    .card {
+        width: 180px;
+    }
+}
+
+
+
+/* Footer styling */
+
+.footer {
+    background-color: #8af6f8;
+    padding: 20px;
+    margin-bottom: 0%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul a {
+    color: #110707;
+    text-decoration: none;
+}
+
+.footer-section ul a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons li {
+    margin-right: 10px;
+}
+
+.social-icons a {
+    /* color: #ffffff; */
+    font-size: 30px;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+    color: #545151;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-section i {
+    margin-right: 8px;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .card {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+
+    .corner-image img{
+        width: 40px; /* Scale down for smaller screens */
+    }
+
+    .mainBody {
+        justify-content: center;
+    }
+}
+
+
+
+
+/* Main product info card styling */
+.product-info {
+    margin: 45px auto;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.product-info:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image styling */
+.product-info img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-info:hover img {
+    transform: scale(1.05);
+}
+
+/* Product details styling */
+.product-details {
+    flex: 1;
+    line-height: 1.6;
+}
+
+.product-details h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.product-details dt {
+    font-size: 1.2rem;
+    color: #2980b9;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.product-details dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Button styling */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #3498db;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1d6fa5;
+    transform: translateY(-2px);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .product-info {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .product-info img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .product-details h1 {
+        text-align: center;
+    }
+
+    .product-details dd {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#product-body .mainBody{
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    overflow: hidden;
+}
+
+#product-body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+} 
+
+.product-info {
+    position: relative;
+    z-index: 2; /* Ensures the content stays above the background overlay */
+    /* The rest of the .product-info styles stay the same */
+}
+
+
+
+/* for about page */
+.about-section img {
+    border-radius: 10px;
+}
+
+.about-section h2 {
+    font-size: 2em;
+    color: #0275d8;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    color: #333;
+}
+.hero-section {
+    background: linear-gradient(rgba(2, 117, 216, 0.7), rgba(0, 0, 0, 0.7)), url('./photos/farmer.png') no-repeat center;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+/* Mission and Vision */
+.mission-vision-section {
+    background-color: #0275d8;
+    padding: 40px;
+    color: white;
+}
+
+.mission-vision-section h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.about_us img {
+    margin-top: 5px;
+    width: 100vw;
+    height: 450px;
+}
+
+@media (max-width: 768px) {
+    .about_us {
+        flex-basis: 80%;
+        margin: 10px 0;
+        width: auto;
+    }
+
+    .about_us img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media(max-width: 618px) {
+    .info {
+        width: 100%;
+        display: block;
+        margin-top: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    #info-img img {
+        margin: auto;
+        width: 97vw;
+        height: auto;
+        align-items: center;
+    }
+
+    #about-info {
+        margin-left: 2%;
+        float: none;
+        text-align: left;
+        align-items: center;
+    }
+}
+
+
+#contact-page {
+    background-image: url("./photos/contact page.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact-div{
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: rgb(244, 238, 238);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-div input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .main {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center;
+    }
+
+    .contactImg img {
+        width: 100%; /* Full width for responsiveness */
+        height: auto;
+    }
+
+    .contact-div {
+        margin: 20px 0 0; /* Adds space above for separation */
+    }
+}
+
+
+/* Center the form container */
+#login-page {
+    background-image: url("./photos/login-page.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Login form container styling */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Logo styling */
+.login-logo img {
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+.login-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Input fields styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50; /* Jai Kisan green */
+    outline: none;
+}
+
+/* Button styling */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Responsive styling */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-btn {
+        font-size: 14px;
+    }
+}
+.btn{
+	cursor:pointer;
+}
